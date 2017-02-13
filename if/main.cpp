@@ -18,6 +18,7 @@ int main() {
     cout << c << " " << b << " " << a;
   } else {
   cout << "i don't know!";
+  cout << "by";
   }
 	return 0;
 }
