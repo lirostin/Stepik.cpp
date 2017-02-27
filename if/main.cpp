@@ -2,23 +2,33 @@
 using namespace std;
 
 int main() {
-    int a, b, c, a1, b1, c1;
-    cin >> a >> b >>c;
-  if (a <= b and b <= c) {
-    cout << a << " " << b << " " << c;
-  } else if (a <= c and c <= b) {
-    cout << a << " " << c << " " << b;
-  } else if (b <= a and a <= c) {
-    cout << b << " " << a << " " << c;
-  } else if (b <= c and c <= a) {
-    cout << b << " " << c << " " << a;
-  } else if (c <= a and a <= b) {
-    cout << c << " " << a << " " << b;
-  } else if (c <= b and b <= a) {
-    cout << c << " " << b << " " << a;
-  } else {
-  cout << "i don't know!";
-  cout << "by";
+    int a1, b1, c1, a2, b2, c2;
+    cin >> a1 >> b1 >> c1 >> a2 >> b2 >> c2;
+  if ((a1 == a2 && b1 == b2 && c1 == c2)
+|| (a1 == a2 && b1 == c2 && c1 == b2)
+      ||(a1 == b2 && b1 == a2  && c1 == c2)
+	  ||(a1 == b2 &&  b1 == c2 && c1 == a2)
+         ||(a1 == c2 && b1 == a2 && c1 == b2)
+		 ||(a1 == c2 && b1 == b2 && c1 == a2)) {
+    cout <<  "Boxes are equal";
+    } else   if ((a1 >= a2 && b1 >= b2 && c1 >= c2)
+|| (a1 >= a2 && b1 >= c2 && c1 >= b2)
+      ||(a1 >= b2 && b1 >= a2  && c1 >= c2)
+	  ||(a1 >= b2 &&  b1 >= c2 && c1 >= a2)
+         ||(a1 >= c2 && b1 >= a2 && c1 >= b2)
+		 ||(a1 >= c2 && b1 >= b2 && c1 >= a2)) {
+    cout <<  "The first box is larger than the second one";
+
+  } else   if ((a1 <= a2 && b1 <= b2 && c1 <= c2)
+|| (a1 <= a2 && b1 <= c2 && c1 <= b2)
+      ||(a1 <= b2 && b1 <= a2  && c1 <= c2)
+	  ||(a1 <= b2 &&  b1 <= c2 && c1 <= a2)
+         ||(a1 <= c2 && b1 <= a2 && c1 <= b2)
+		 ||(a1 <= c2 && b1 <= b2 && c1 <= a2)) {
+    cout <<  "The first box is smaller than the second one";
+;
+         } else {
+  cout << "Boxes are incomparable";
   }
 	return 0;
 }
